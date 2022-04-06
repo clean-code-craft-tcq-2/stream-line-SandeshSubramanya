@@ -3,7 +3,7 @@
 // Helper method to display readings on console.
 void vDisplayBatteryParamters(vector<stBatteryParams>& rfSesorReadings)
 {
-  for(int Index =0; Index<= (int)rfSesorReadings.size(); ++Index)
+  for(int Index =0; Index< (int)rfSesorReadings.size(); ++Index)
   {
     cout<<"Temperature: "<<rfSesorReadings[Index].internalTemperature<<" SoC: "<<rfSesorReadings[Index].stateOfCharge<<" ChargingTime: "<<rfSesorReadings[Index].chargingTimeSec<<endl;
   }
