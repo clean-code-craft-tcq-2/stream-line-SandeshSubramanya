@@ -11,7 +11,7 @@ TEST_CASE(" Test the usage of Sender")
   vReceiveBatteryParameterValues();
 }
 
-TEST_CASE(" Test the Sender if it generates required values from Sensor") 
+TEST_CASE(" Test the Sender to check if it sends required values from Sensor") 
 {
   #define MAX_SENSOR_VALUES_TO_BE_READ 50
   vector<stBatteryParams> SensorValues;
