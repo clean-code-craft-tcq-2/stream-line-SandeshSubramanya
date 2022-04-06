@@ -5,9 +5,9 @@
 using namespace std;
 #define MAX_VALUE_TO_READ 50
 
-void vDisplayBatteryParamters(const vector<int> rfSesorReadings)
+void vDisplayBatteryParamters(vector<int> rfSesorReadings)
 {
-  for(int Index =0; Index<=rfSesorReadings.size(); ++Index)
+  for(int Index =0; Index<= (int)rfSesorReadings.size(); ++Index)
   {
     cout<<"Temperature: "<<rfSesorReadings[Index].internalTemperature<<" SoC: "<<rfSesorReadings[Index].stateOfCharge<<" ChargingTime: "<<rfSesorReadings[Index].chargingTimeSec<<endl;
   }
