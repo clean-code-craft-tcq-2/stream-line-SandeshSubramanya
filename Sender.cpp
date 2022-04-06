@@ -1,10 +1,3 @@
-#pragma once
-#include "Sensor.h"
-#include <iostream>
-#include <vector>
-using namespace std;
-#define MAX_VALUE_TO_READ 50
-
 // Helper method to display readings on console.
 void vDisplayBatteryParamters(vector<stBatteryParams> rfSesorReadings)
 {
