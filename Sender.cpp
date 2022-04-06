@@ -1,4 +1,5 @@
 #include "Sender.h"
+#pragma once
 
 // Helper method to display readings on console.
 void vDisplayBatteryParamters(vector<stBatteryParams>& rfSesorReadings)
