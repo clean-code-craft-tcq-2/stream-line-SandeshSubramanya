@@ -21,7 +21,7 @@ void vReadBatteryParamtersFromSensor(vector<stBatteryParams>& rfSesorReadings)
 }
 
 // method reads the values from the sensor and dsiplays the entire values on the console.
-void vGetBatteryParameterValues()
+void vReceiveBatteryParameterValues()
 {
   vector<stBatteryParams> oSesorReadings;
   vReadBatteryParamtersFromSensor(oSesorReadings);
