@@ -25,9 +25,9 @@ struct stBatteryParams
   rfBatteryParameter.chargingTimeSec = (randomNumber * 1000);
 }
 
-stBatteryParam getBatteryParamterValuesFromSensor()
+stBatteryParams getBatteryParamterValuesFromSensor()
 {
-  stBatteryParam oSingleBatteryParamValue;
+  stBatteryParams oSingleBatteryParamValue;
   GenerateBatteryParamters(oSingleBatteryParamValue);
   return oSingleBatteryParamValue;
 }
