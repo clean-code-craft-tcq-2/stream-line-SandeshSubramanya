@@ -10,12 +10,12 @@ This is a simple sensor, that generates combination of 3 values
 #include <cstdlib>
 using namespace std;
 
-typedef struct
+struct stBatteryParams
 {
-  int internalTemperature,
-  int stateOfCharge,
-  int chargingTimeSec,
-}stBatteryParams;
+  int internalTemperature;
+  int stateOfCharge;
+  int chargingTimeSec;
+};
 
 stBatteryParams stGenerateBatteryParamters()
 {
