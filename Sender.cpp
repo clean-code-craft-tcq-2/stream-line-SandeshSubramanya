@@ -1,8 +1,9 @@
 #pragma once
 #include "Sensor.h"
+#include <iostream>
 using namespace std;
 
 void vDisplayBatteryParamters(stBatteryParams oBatteryParam)
 {
-  cout<<"Temperature: "<<oBatterParameter.internalTemperature<<" SoC: "<<oBatterParameter.stateOfCharge<<" ChargingTime: "<<oBatterParameter.chargingTimeSec<<endl;
+  cout<<"Temperature: "<<oBatteryParam.internalTemperature<<" SoC: "<<oBatteryParam.stateOfCharge<<" ChargingTime: "<<oBatteryParam.chargingTimeSec<<endl;
 }
