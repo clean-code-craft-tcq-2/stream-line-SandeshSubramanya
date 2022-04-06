@@ -17,12 +17,17 @@ struct stBatteryParams
   int chargingTimeSec;
 };
 
-stBatteryParams stGenerateBatteryParamters()
+ void GenerateBatteryParamters(stBatteryParams& rfBatteryParameter)
 {
   int randomNumber= 1 + (rand() % 50);
-  stBatteryParams oBatteryParameter;
-  oBatteryParameter.internalTemperature = randomNumber;
-  oBatteryParameter.stateOfCharge = (randomNumber + 10);
-  oBatteryParameter.chargingTimeSec = (randomNumber * 1000);
-  return oBatteryParameter;
+  rfBatteryParameter.internalTemperature = randomNumber;
+  rfBatteryParameter.stateOfCharge = (randomNumber + 10);
+  rfBatteryParameter.chargingTimeSec = (randomNumber * 1000);
+}
+
+stBatteryParam getBatteryParamterValuesFromSensor()
+{
+  stBatteryParam oSingleBatteryParamValue;
+  GenerateBatteryParamters(oSingleBatteryParamValue);
+  return oSingleBatteryParamValue;
 }
