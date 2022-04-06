@@ -23,6 +23,6 @@ stBatteryParams stGenerateBatteryParamters()
   stBatteryParams oBatteryParamter;
   oBatterParameter.internalTemperature = randomNumber;
   oBatterParameter.stateOfCharge = (randomNumber + 10);
-  oBatterParameter.stateOfCharge = (randomNumber * 1000);
+  oBatterParameter.chargingTimeSec = (randomNumber * 1000);
   return oBatteryParamter;
 }
