@@ -20,9 +20,9 @@ typedef struct
 stBatteryParams stGenerateBatteryParamters()
 {
   int randomNumber= 1 + (rand() % 50);
-  stBatteryParams oBatteryParamter;
-  oBatterParameter.internalTemperature = randomNumber;
-  oBatterParameter.stateOfCharge = (randomNumber + 10);
-  oBatterParameter.chargingTimeSec = (randomNumber * 1000);
-  return oBatteryParamter;
+  stBatteryParams oBatteryParameter;
+  oBatteryParameter.internalTemperature = randomNumber;
+  oBatteryParameter.stateOfCharge = (randomNumber + 10);
+  oBatteryParameter.chargingTimeSec = (randomNumber * 1000);
+  return oBatteryParameter;
 }
