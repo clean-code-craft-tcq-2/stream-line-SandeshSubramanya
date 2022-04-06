@@ -6,6 +6,15 @@
 TEST_CASE(" Test the usage of Sender") 
 {
   // The sender is designed such a way that the interface needs to be called.
-  // The sender just displays the various values of battery to the console
+  // The sender internally requets sensor and just displays the various values of battery values to the console directly
+  
   vReceiveBatteryParameterValues();
+}
+
+TEST_CASE(" Test the Sender if it generates required values from Sensor") 
+{
+  #define MAX_SENSOR_VALUES_TO_BE_READ 50
+  vector<stBatteryParams> SensorValues;
+  vReadBatteryParamtersFromSensor(SensorValues);
+  assert(SensorValues.size() == MAX_SENSOR_VALUES_TO_BE_READ);
 }
