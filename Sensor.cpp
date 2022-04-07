@@ -6,7 +6,7 @@ void GenerateBatteryParamters(stBatteryParams& rfBatteryParameter)
   rfBatteryParameter.internalTemperature = RandomNumber * 2;
   rfBatteryParameter.stateOfCharge = (RandomNumber + 10);
   rfBatteryParameter.chargingTimeSec = (RandomNumber * 1000);
-  ++RandomNumber
+  ++RandomNumber;
 }
 
 stBatteryParams getBatteryParamterValuesFromSensor()
