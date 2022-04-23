@@ -7,7 +7,7 @@ using namespace std;
 
 TEST_CASE("Test the recieve And Compute"){
 	bool readStatus = STATUS_NOK;
-	readStatus = recieveAndCompute(&readDataFromFile);
+	readStatus = recieveAndCompute(&readDataFromConsole);
 	REQUIRE(readStatus == STATUS_OK);
 }
 
