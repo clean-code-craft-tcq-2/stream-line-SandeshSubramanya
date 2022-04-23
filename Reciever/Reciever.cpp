@@ -75,7 +75,7 @@ void findTemperatureMinAndMaxValue(float temperatureReadings[], int numberOfRead
 	float maxTemperature = 0.0, minTemperature = 0.0;
 	minTemperature = findMinimumReadingValue(temperatureReadings, numberOfReadings);
 	maxTemperature = findMaximumReadingValue(temperatureReadings, numberOfReadings);
-	cout << " Temperature: " << " Mininum Value: " << minTemperature << "Maximum Value: " << maxTemperature <<  endl;
+	cout << " Temperature: " << " Mininum Value: " << minTemperature << " Maximum Value: " << maxTemperature <<  endl;
 }
 
 void findStateOfChargeMinAndMaxValue(float stateOfChargeReadings[], int numberOfReadings)
@@ -83,7 +83,7 @@ void findStateOfChargeMinAndMaxValue(float stateOfChargeReadings[], int numberOf
 	float maxStateOfCharge = 0.0, minStateOfCharge = 0.0;
 	minStateOfCharge = findMinimumReadingValue(stateOfChargeReadings, numberOfReadings);
 	maxStateOfCharge = findMaximumReadingValue(stateOfChargeReadings, numberOfReadings);
-	cout << " State Of Charge: " << " Mininum Value: " << minStateOfCharge << "Maximum Value: " << maxStateOfCharge << endl;
+	cout << " State Of Charge: " << " Mininum Value: " << minStateOfCharge << " Maximum Value: " << maxStateOfCharge << endl;
 }
 
 void findChargingTimeMinAndMaxValue(float chargingTimeReadings[], int numberOfReadings)
@@ -91,7 +91,7 @@ void findChargingTimeMinAndMaxValue(float chargingTimeReadings[], int numberOfRe
 	float maxChargingTime = 0.0, minChargingTime = 0.0;
 	minChargingTime = findMinimumReadingValue(chargingTimeReadings, numberOfReadings);
 	maxChargingTime = findMaximumReadingValue(chargingTimeReadings, numberOfReadings);
-	cout << " Charging Time: " << " Mininum Value: " << minChargingTime << "Maximum Value: " << maxChargingTime << endl;
+	cout << " Charging Time: " << " Mininum Value: " << minChargingTime << " Maximum Value: " << maxChargingTime << endl;
 }
 
 void findTemperatureSimpleMovingAverage(float temperatureReadings[], int numberOfReadings)
