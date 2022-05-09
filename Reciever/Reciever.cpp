@@ -1,6 +1,6 @@
 #include "Reciever.h"
 #include <iostream>
-using namespace std;
+#include <bits/stdc++.h>
 
 //Function to read data from file in test environment
 bool readDataFromFile(float temperatureReadings[], float stateOfChargeReadings[], float chargingTimeReadings[], int numberOfReadings)
@@ -43,7 +43,6 @@ float findMaximumReadingValue(float batteryParameterReadings[], int numberOfRead
 		if (batteryParameterReadings[i] > max)
 			max = batteryParameterReadings[i];
 	}
-
 	return max;
 }
 
@@ -70,49 +69,22 @@ float ComputeSimpleMovingAvergeOfLastFiveValues(float batteryParameterReadings[]
 	return average;
 }
 
-void findTemperatureMinAndMaxValue(float temperatureReadings[], int numberOfReadings)
+void findMinAndMaxValueofParameter(float Readings[], int numberOfReadings, string parameterName)
 {
-	float maxTemperature = 0.0, minTemperature = 0.0;
-	minTemperature = findMinimumReadingValue(temperatureReadings, numberOfReadings);
-	maxTemperature = findMaximumReadingValue(temperatureReadings, numberOfReadings);
-	cout << " Temperature: " << " Mininum Value: " << minTemperature << " Maximum Value: " << maxTemperature <<  endl;
+	float minValue = 0.0, maxValue = 0.0;
+
+	minValue = findMinimumReadingValue(Readings, numberOfReadings);
+	maxValue = findMaximumReadingValue(Readings, numberOfReadings);
+
+	cout << parameterName << " : " << " Mininum Value: " << minValue << " Maximum Value: " << maxValue << endl;
+
 }
 
-void findStateOfChargeMinAndMaxValue(float stateOfChargeReadings[], int numberOfReadings)
+void findSimpleMovingAverageofParameter(float Readings[], int numberOfReadings, string parameterName)
 {
-	float maxStateOfCharge = 0.0, minStateOfCharge = 0.0;
-	minStateOfCharge = findMinimumReadingValue(stateOfChargeReadings, numberOfReadings);
-	maxStateOfCharge = findMaximumReadingValue(stateOfChargeReadings, numberOfReadings);
-	cout << " State Of Charge: " << " Mininum Value: " << minStateOfCharge << " Maximum Value: " << maxStateOfCharge << endl;
-}
-
-void findChargingTimeMinAndMaxValue(float chargingTimeReadings[], int numberOfReadings)
-{
-	float maxChargingTime = 0.0, minChargingTime = 0.0;
-	minChargingTime = findMinimumReadingValue(chargingTimeReadings, numberOfReadings);
-	maxChargingTime = findMaximumReadingValue(chargingTimeReadings, numberOfReadings);
-	cout << " Charging Time: " << " Mininum Value: " << minChargingTime << " Maximum Value: " << maxChargingTime << endl;
-}
-
-void findTemperatureSimpleMovingAverage(float temperatureReadings[], int numberOfReadings)
-{
-	float smaTemperature = 0.0;
-	smaTemperature = ComputeSimpleMovingAvergeOfLastFiveValues(temperatureReadings, numberOfReadings);
-	cout << " Temperature: " << "Simple Moing Average: " << smaTemperature << endl;
-}
-
-void findStateOfChargeSimpleMovingAverage(float stateOfChargeReadings[], int numberOfReadings)
-{
-	float smaStateOfCharge = 0.0;
-	smaStateOfCharge = ComputeSimpleMovingAvergeOfLastFiveValues(stateOfChargeReadings, numberOfReadings);
-	cout << " State Of Charge: " << "Simple Moing Average: " << smaStateOfCharge << endl;
-}
-
-void findChargingTimeSimpleMovingAverage(float chargingTimeReadings[], int numberOfReadings)
-{
-	float smaChargingTime = 0.0;
-	smaChargingTime = ComputeSimpleMovingAvergeOfLastFiveValues(chargingTimeReadings, numberOfReadings);
-	cout << " Charging Time: " << "Simple Moing Average: " << smaChargingTime << endl;
+	float smaValue = 0.0;
+	smaValue = ComputeSimpleMovingAvergeOfLastFiveValues(Readings, numberOfReadings);
+	cout << parameterName << " : " << "Simple Moing Average: " << smaValue << endl;
 }
 
 bool recieveAndCompute(bool(*readDataFunc)(float[], float[], float[], int))
@@ -123,13 +95,14 @@ bool recieveAndCompute(bool(*readDataFunc)(float[], float[], float[], int))
 
 	if (readStatus)
 	{
-		findTemperatureMinAndMaxValue(temperatureReadings, TOTAL_NUMBER_OF_READINGS);
-		findStateOfChargeMinAndMaxValue(stateOfChargeReadings, TOTAL_NUMBER_OF_READINGS);
-		findChargingTimeMinAndMaxValue(chargingTimeReadings, TOTAL_NUMBER_OF_READINGS);
+		findMinAndMaxValueofParameter(temperatureReadings, TOTAL_NUMBER_OF_READINGS, "Temperature");
+		findMinAndMaxValueofParameter(stateOfChargeReadings, TOTAL_NUMBER_OF_READINGS, "State of Charge");
+		findMinAndMaxValueofParameter(chargingTimeReadings, TOTAL_NUMBER_OF_READINGS, "Charging Time");
 
-		findTemperatureSimpleMovingAverage(temperatureReadings, TOTAL_NUMBER_OF_READINGS);
-		findStateOfChargeSimpleMovingAverage(stateOfChargeReadings, TOTAL_NUMBER_OF_READINGS);
-		findChargingTimeSimpleMovingAverage(chargingTimeReadings, TOTAL_NUMBER_OF_READINGS);
+		findSimpleMovingAverageofParameter(temperatureReadings, TOTAL_NUMBER_OF_READINGS, "Temperature");
+		findSimpleMovingAverageofParameter(stateOfChargeReadings, TOTAL_NUMBER_OF_READINGS, "State of Charge");
+		findSimpleMovingAverageofParameter(chargingTimeReadings, TOTAL_NUMBER_OF_READINGS, "Charging Time");
+
 	}
 	return readStatus;
 }
