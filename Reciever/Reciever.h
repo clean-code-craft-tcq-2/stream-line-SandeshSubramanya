@@ -1,3 +1,6 @@
+#include <string>
+using namespace std;
+
 #define STATUS_OK true
 #define STATUS_NOK false
 #define TOTAL_NUMBER_OF_READINGS 50
@@ -10,12 +13,7 @@ float findMinimumReadingValue(float batteryParameterReadings[], int numberOfRead
 
 float ComputeSimpleMovingAvergeOfLastFiveValues(float batteryParameterReadings[], int numberOfReadings);
 
-void findTemperatureMinAndMaxValue(float temperatureReadings[], int numberOfReadings);
-void findStateOfChargeMinAndMaxValue(float stateOfChargeReadings[], int numberOfReadings);
-void findChargingTimeMinAndMaxValue(float chargingTimeReadings[], int numberOfReadings);
-
-void findTemperatureSimpleMovingAverage(float temperatureReadings[], int numberOfReadings);
-void findStateOfChargeSimpleMovingAverage(float stateOfChargeReadings[], int numberOfReadings);
-void findChargingTimeSimpleMovingAverage(float chargingTimeReadings[], int numberOfReadings);
+void findMinAndMaxValueofParameter(float Readings[], int numberOfReadings, string parameterName);
+void findSimpleMovingAverageofParameter(float Readings[], int numberOfReadings, string parameterName);
 
 bool recieveAndCompute(bool(*readDataFunc)(float[],float[],float[],int));
